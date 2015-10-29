@@ -2,40 +2,65 @@
   <head>
     <title>Mojave HS Person ID Finder</title>
     <style>
-      body {font-family: Helvetica,Arial,sans-serif; font-size: 16px;}
-      input {margin-bottom: 10px; padding: 10px; width: 300px; font-size: 20px; font-weight: 200;}
-      td {padding: 4px; border: 1px #CCC solid; width: 100px;}
-      p {margin-bottom: 40px;}
-      .container {width: 800px; margin-left: auto; margin-right: auto;}
-      .header {text-align: center;}
-      .data-table {text-align: center;}
-      .data-table table {width: 300px; margin: 0 auto;}
+      body {
+        font-family: Helvetica,Arial,sans-serif;
+        font-size: 18px;
+      }
+      input {
+        margin-bottom: 10px;
+        padding: 10px; width: 300px;
+        font-size: 20px;
+        font-weight: 200;
+      }
+      td {
+        padding: 4px;
+        border: 1px #CCC solid;
+        width: 100px;
+      }
+      p {
+        margin-bottom: 0px;
+      }
+      .container {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .instructions {
+        border: 1px solid #696969;
+        margin-top: 20px;
+        padding: 0px 0px 20px 0px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .data-table {
+        text-align: center;
+      }
+      .data-table table {
+        width: 300px;
+        margin: 0 auto;
+      }
+      .simple {
+        border:none;
+        border-bottom: 1px solid #696969;
+        font-size: 16px;
+        width: 50%;
+      }
+      .simple:focus {
+        outline:none;
+      }
+      .email {
+        background-color: #eee;
+        padding: 20px;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <div class="header text-center">
         <img height="100px" src="http://images.pcmac.org/SiSFiles/Schools/NV/ClarkCounty/MojaveHigh/Uploads/Other/%7BC405D8EB-B74E-4E77-9736-867BAD48196A%7D_Picture1.png">
         <img height="100px" src="https://ctreichler.wikispaces.com/file/view/googleappslogo.png/455356282/320x128/googleappslogo.png">
-        <h2>Locate your person ID using your student number</h2>
-        <p>
-          Your <b>email address</b> is <br>
-          <code>
-            [First name (up to 8 digits)].[your Infinite Campus person ID #]@nv.ccsd.net
-          </code>
-        </p>
-        <p>
-          Your <b>password</b> is your student number
-        </p>
-        <p>
-          For example, if my name is Sample and my person ID is 344568, then my email address is <br>
-          <code>
-            sample.344568@nv.ccsd.net
-          </code><br>
-          and my password is my student number.
-        </p>
-        </p>
-        <p>For more information on how to setup your student account, <a href="https://docs.google.com/document/d/1K0Ze-2zyk5XrknIae-O1LD4KdOp-HMl-L8FVrLBfpVI/edit" target="_blank">click here</a>.</p>
+        <h2>Create your CCSD Goolge account username</h2>
       </div>
       <div class="data-table">
         <input type="text" id="search" placeholder="Enter your student number">
@@ -9526,8 +9551,34 @@
                <th bgcolor="black" colspan="2"><b><font color="white">All Records</font></b></th>
             </tr>
         </table>
+      </div><!-- .data-table -->
+
+      <div class="instructions text-center">
+        <p>
+          <input class="name simple" type="text" maxlength="8" placeholder="Enter the first 8 letters of your first name">
+          <input class="personid simple" type="number" placeholder="Enter your person ID from the table above">
+          <div class="email">
+            <p>
+              Your <b>email address</b> is
+            </p>
+            <p>
+              <span class="name"></span>.<span class="personid"></span>@nv.ccsd.net
+            </p>
+            <p>
+              Your <b>password</b> is your student number
+            </p>
+            <p>
+            <a href="https://accounts.google.com/ServiceLogin?hl=en&continue=https://www.google.com/" target="_blank">Click here to sign in now</a>
+            </p>
+          </div>
+        </p>
+        <p>
+          For more information on how to setup your student account,
+          <a href="https://docs.google.com/document/d/1K0Ze-2zyk5XrknIae-O1LD4KdOp-HMl-L8FVrLBfpVI/edit" target="_blank">click here</a>.
+        </p>
       </div>
-    </div>
+    </div><!-- .container -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
       var $rows = $('#table tr:not(:first)');
@@ -9538,6 +9589,14 @@
           var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
           return !~text.indexOf(val);
         }).hide();
+      });
+      $('input.name').keyup(function() {
+        var name = $('input.name').val();
+        $('span.name').html(name);
+      });
+      $('input.personid').keyup(function() {
+        var personid = $('input.personid').val();
+        $('span.personid').html(personid);
       });
     </script>
   </body>
