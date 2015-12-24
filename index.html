@@ -27,13 +27,13 @@
                                     <div class="row">
                                         <div class="col-xs-5">
                                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                <input class="mdl-textfield__input" type="text" id="first_name" ng-model="lookup.user.firstName">
+                                                <input class="mdl-textfield__input" type="text" id="first_name" ng-model="lookup.user.firstName" required>
                                                 <label class="mdl-textfield__label" for="first_name">First Name</label>
                                             </div>
                                         </div>
                                         <div class="col-xs-5">
                                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                <input class="mdl-textfield__input" type="text" id="student_number" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="lookup.user.studentNumber">
+                                                <input class="mdl-textfield__input" type="text" id="student_number" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="lookup.user.studentNumber" required>
                                                 <label class="mdl-textfield__label" for="student_number">Student Number</label>
                                                 <span class="mdl-textfield__error">Input is not a number!</span>
                                             </div>
