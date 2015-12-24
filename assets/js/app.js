@@ -36,7 +36,7 @@
             var query = ref.orderByChild('studentNumber').equalTo(Number(this.user.studentNumber));
             
             // Process the query results
-            query.on('value', function(snapshot) {
+            query.once('value', function(snapshot) {
                 $timeout(function() {
                     var data = snapshot.val();
                     console.log(data);
