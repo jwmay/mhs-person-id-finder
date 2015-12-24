@@ -1,0 +1,35 @@
+body {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.mdl-card-wide {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.search-form {
+    padding: 20px 30px;
+}
+
+.email {
+    background-color: #eee;
+    padding: 20px;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.result {
+    margin-bottom: 10px;
+}
+
+.result:last-of-type {
+    margin-bottom: 0px;
+}
