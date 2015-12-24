@@ -3,18 +3,20 @@ body {
     font-size: 18px;
 }
 
-.container {
-    width: 800px;
-    margin: 0 auto;
+a:hover {
+    text-decoration: none;
 }
 
 .mdl-card-wide {
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .text-center {
     text-align: center;
+}
+
+.search-form {
+    padding: 20px 30px;
 }
 
 .email {
@@ -22,4 +24,12 @@ body {
     padding: 20px;
     width: 100%;
     margin-top: -20px;
+}
+
+.result {
+    margin-bottom: 10px;
+}
+
+.result:last-of-type {
+    margin-bottom: 0px;
 }
