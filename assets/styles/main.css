@@ -7,6 +7,21 @@ a:hover {
     text-decoration: none;
 }
 
+.container {
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.mdl-textfield {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .container {
+        width: 800px;
+    }
+}
+
 .mdl-card-wide {
     width: 100%;
 }
