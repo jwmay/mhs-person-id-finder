@@ -25,17 +25,24 @@
                             <div class="col-xs-12">
                                 <form class="search-form" ng-submit="lookup.search()">
                                     <div class="row">
-                                        <div class="col-xs-12 col-sm-5">
+                                        <div class="col-xs-12 col-sm-4">
                                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                <input class="mdl-textfield__input" type="text" id="first_name" ng-model="lookup.user.firstName">
-                                                <label class="mdl-textfield__label" for="first_name">First Name</label>
+                                                <input class="mdl-textfield__input" type="text" id="last_name" ng-model="lookup.user.lastName">
+                                                <label class="mdl-textfield__label" for="last_name">Last Name</label>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-5">
+                                        <div class="col-xs-12 col-sm-3">
                                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                                <input class="mdl-textfield__input" type="text" id="student_number" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="lookup.user.studentNumber">
+                                                <input class="mdl-textfield__input" type="text" id="student_number" pattern="[0-9]*" ng-model="lookup.user.studentNumber">
                                                 <label class="mdl-textfield__label" for="student_number">Student Number</label>
                                                 <span class="mdl-textfield__error">Input is not a number!</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3">
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <input class="mdl-textfield__input" type="text" id="birthdate" pattern="[0-9]{6}" ng-model="lookup.user.birthdate">
+                                                <label class="mdl-textfield__label" for="birthdate">Date of Birth</label>
+                                                <span class="mdl-textfield__error">Enter as MMDDYY</span>
                                             </div>
                                         </div>
                                         <div class="col-xs-2">

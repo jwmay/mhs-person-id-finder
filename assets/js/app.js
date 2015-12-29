@@ -5,7 +5,7 @@
         var _this = this;
         
         // Usage instructions to display to user
-        var instructions = 'Enter your name and student number above to find your username';
+        var instructions = 'Enter your last name, student number, and date of birth above to find your username';
         
         // Flag to control display of the spinning wheel
         this.searching = false;
