@@ -55,3 +55,7 @@ a:hover {
     color: #696969;
     font-style: italic;
 }
+
+.help-text.last-name {
+    margin-top: -20px;
+}
