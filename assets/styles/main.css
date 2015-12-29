@@ -48,3 +48,10 @@ a:hover {
 .result:last-of-type {
     margin-bottom: 0px;
 }
+
+.help-text {
+    display: block;
+    font-size: 10px;
+    color: #696969;
+    font-style: italic;
+}
