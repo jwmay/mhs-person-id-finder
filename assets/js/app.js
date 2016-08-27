@@ -18,6 +18,7 @@
             studentNumber: '',
             personId: '',
             birthdate: '',
+            password: '',
             found: false,
             message: instructions
         };
@@ -54,12 +55,13 @@
                             var lastName = data[key].lastName;
                             var personId = data[key].personId;
                             var dob = $filter('mhsDateFilter')(data[key].birthdate);
+                            var password = $filter('mhsPasswordFilter')(data[key].birthdate);
                             
                             // Verifty that the last name matches
                             if ($filter('lowercase')(_this.user.lastName) === $filter('lowercase')(lastName)) {
                                 // Verify that the birthdate matches
                                 if (_this.user.birthdate === dob) {
-                                    _updateUser(firstName, personId);
+                                    _updateUser(firstName, personId, password);
                                 }
                                 else {
                                     _this.user.message = 'Date of birth does not match record';
@@ -88,14 +90,16 @@
             _this.user.studentNumber = '';
             _this.user.personId = '';
             _this.user.birthdate = '';
+            _this.password = '';
             _this.user.found = false;
             _this.user.message = instructions;
         };
         
         // Function to update the person ID once found in the Firebase database
-        var _updateUser = function(firstName, personId) {
+        var _updateUser = function(firstName, personId, password) {
             _this.user.firstName = firstName;
             _this.user.personId = personId;
+            _this.user.password = password;
             _this.user.found = true;
         };
     });
@@ -129,6 +133,18 @@
             
             // Return the 6-digit date as a string
             return noSlashes.join('');
+        };
+    });
+
+    // Filter the birthdate to construct the temporary password as YYYYMMDD
+    app.filter('mhsPasswordFilter', function() {
+        return function(date) {
+            // Remove the slashes
+            var noSlashes = date.split('/');
+
+            // Create and return the password as YYYYMMDD
+            var password = noSlashes[2] + noSlashes[0] + noSlashes[1];
+            return password;
         };
     });
 })();
