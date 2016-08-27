@@ -13,6 +13,12 @@
 ### Convert the CSV file to a JSON file
 1. Go to http://www.csvjson.com/csv2json
 2. Click *Select a file...* to open the csv file downloaded from Infinite Campus
+3. Change the headers per the following:
+   * First Name --> firstName
+   * Last Name --> lastName
+   * Student Number --> studentNumber
+   * Person ID --> personId
+   * Birthdate --> birthdate
 3. Click the *>* between the two gray boxes to convert the file
 4. Copy the JSON text into a new text file
 5. Save the file with the .json extenstion (it cannot be .txt)
